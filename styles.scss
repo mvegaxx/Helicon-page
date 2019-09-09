@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    background-color: #0a61e2;
+    font-size: 12px;
+}
+
+.container {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    /*transform: rotatex(180deg);*/
+
+    margin: auto;
+
+}
+
+.cell {
+    width: 5vh;
+    height: 5vh;
+}
+
+@mixin base-dot {
+    background-color: #fff;
+    font-size: 3em;
+}
+
+$coordenadas: 1 3 5 6 7 9;
+
+@each $dot in $coordenadas {
+    .cell:nth-child(#{$dot}) {
+        @include base-dot;
+        animation: north-america 2.5s linear alternate infinite;
+
+    }
+}
+
+
+.cell:nth-child(1) {
+
+
+    animation-delay: -1020ms;
+}
+
+.cell:nth-child(3) {
+
+
+    animation-delay: -1130ms;
+}
+
+.cell:nth-child(5) {
+
+    animation-delay: -1500ms;
+}
+
+.cell:nth-child(6) {
+
+    animation-delay: -1380ms;
+}
+
+.cell:nth-child(7) {
+
+
+
+    animation-delay: -1780ms;
+
+}
+
+.cell:nth-child(9) {
+
+
+    animation-delay: -1510ms;
+}
+
+
+@keyframes north-america {
+    0% {
+        background-color: #ffffff;
+    }
+
+
+
+    50% {
+        background-color: #58585830;
+    }
+
+
+
+    100% {
+        background-color: #fff;
+
+    }
+}
